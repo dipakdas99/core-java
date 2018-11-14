@@ -52,7 +52,7 @@ public class LargestBSTinBinaryTree {
 	
 	public static void main(String[] args) {
 		LargestBSTinBinaryTree tree = new LargestBSTinBinaryTree();
-		tree.root = new Node(20);
+		/*tree.root = new Node(20);
 		tree.root.left = new Node(10);
 		tree.root.left.left = new Node(7);
 		tree.root.left.right = new Node(8);
@@ -64,7 +64,12 @@ public class LargestBSTinBinaryTree {
 		tree.root.right.left = new Node(16);
 		tree.root.right.right = new Node(20);
 		tree.root.right.right.left = new Node(18);
-		tree.root.right.right.right = new Node(22);
+		tree.root.right.right.right = new Node(22);*/
+		tree.root = new Node(20);
+		tree.root.left = new Node(10);
+		tree.root.left.left = new Node(35);
+		tree.root.left.right = new Node(15);
+		tree.root.right = new Node(30);
 		
 		
 		 int largestBSTSize = tree.largestBST(tree.root);
