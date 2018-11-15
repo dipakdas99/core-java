@@ -30,6 +30,7 @@ public class ChidrenSumParent {
 		tree.root.left.left = new Node(3);
 		tree.root.left.right = new Node(5);
 		tree.root.right.left = new Node(1);
+		tree.root.right.right = new Node(1);
 
 		System.out.println(tree.sumParent(tree.root));
 	}

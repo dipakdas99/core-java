@@ -23,7 +23,13 @@ public class AddAllGreaterValuesToEveryNodeInABST {
 		
 		addMax(node.left,s);
 	}
-
+	private static void inorder(Node node){
+		if (node == null)
+			return;
+		inorder(node.left);
+		System.out.print(node.key+" ");
+		inorder(node.right);
+	}
 	public static void main(String[] args) {
 		AddAllGreaterValuesToEveryNodeInABST tree = new AddAllGreaterValuesToEveryNodeInABST();
 		tree.root = new Node(50);
@@ -35,6 +41,8 @@ public class AddAllGreaterValuesToEveryNodeInABST {
 		tree.root.right.right = new Node(80);
 		
 		tree.addMaxToNode(tree.root);
+		
+		inorder(tree.root);
 
 	}
 

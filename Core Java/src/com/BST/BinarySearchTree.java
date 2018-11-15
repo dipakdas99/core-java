@@ -79,13 +79,18 @@ class BinarySearchTree {
     public static void main(String[] args) { 
         BinarySearchTree tree = new BinarySearchTree(); 
   
-        tree.insert(50); 
+       /* tree.insert(50); 
         tree.insert(30); 
         tree.insert(20); 
         tree.insert(40); 
         tree.insert(70); 
         tree.insert(60); 
-        tree.insert(80); 
+        tree.insert(80); */
+        tree.root = new Node(1); 
+        tree.root.left = new Node(2); 
+        tree.root.right = new Node(3); 
+        tree.root.left.left = new Node(4); 
+        tree.root.left.right = new Node(5);
   
         tree.inorder();
         
@@ -100,20 +105,20 @@ class BinarySearchTree {
         if(result==null){
         	System.out.println("Not found");
         }else
-        	System.out.println(result.key);
+        	System.out.println("Search found: "+result.key);
         
         System.out.println();
-        Node result2 = tree.search(tree.root2,50);
+        Node result2 = tree.search(tree.root2,3);
         if(result2==null){
         	System.out.println("Not found");
         }else
-        	System.out.println("Search found: "+result.key);
+        	System.out.println("Search found: "+result2.key);
         
         boolean r = sameTree(tree.root,tree.root2);
-        System.out.println(r);
+        System.out.println("Is two binary tree is same ? "+r);
         
         int size = sizeBST(tree.root);
-        System.out.println("Size: "+size);
+        System.out.println("Size of the BST: "+size);
         
         int height = heightBST(tree.root2);
         System.out.println("height of a binary tree is :"+height);
