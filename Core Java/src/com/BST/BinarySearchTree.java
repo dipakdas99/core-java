@@ -13,9 +13,7 @@ class BinarySearchTree {
     
     Node root;
     Node root2;
-    /*BinarySearchTree() {  
-        root = null;  
-    }*/
+   
     void insert(int key) { 
        root = insertRec(root, key); 
     } 
