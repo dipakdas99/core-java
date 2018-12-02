@@ -1,5 +1,6 @@
 package com.Heap;
 import java.util.Stack;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class NearlySortedAlgorithm {
@@ -28,7 +29,7 @@ public class NearlySortedAlgorithm {
 		while (!s2.isEmpty()){
 			System.out.print(s2.pop()+" ");
 		}*/
-		for (int i = 0; i < k ; ){
+		/*for (int i = 0; i < k ; ){
  			if (arr[i] > arr[k-1]){
 				swap(arr,i,k-1);
 			}else
@@ -46,9 +47,10 @@ public class NearlySortedAlgorithm {
 		int temp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = temp;
-	}
+	}*/
+			
 	
-
+}
 	public static void main(String[] args) {
 		NearlySortedAlgorithm sort = new NearlySortedAlgorithm();
 		/*int arr1[] = {2, 6, 3, 12, 56, 8};
@@ -58,14 +60,22 @@ public class NearlySortedAlgorithm {
 		sort.sortedNearly(arr1, n, k1);*/
 		Scanner sc = new Scanner(System.in);
 		int inputLen = sc.nextInt();
-		for (int i = 0; i < inputLen; i++){
+		for (int l = 0; l < inputLen; l++){
 			int noOfElement = sc.nextInt();
-			int arr[] = new int[noOfElement];
+			//int arr[] = new int[noOfElement];
 			int k = sc.nextInt();
-			for (int j = 0; j < noOfElement; j++){
-				arr[i] = sc.nextInt();
-			}
-			sort.sortedNearly(arr, noOfElement, k);
+			 PriorityQueue<Integer> q=new PriorityQueue<Integer>();
+		     for(int i=0;i<k;i++)
+		     q.add(sc.nextInt());
+		     for(int i=k;i<noOfElement;++i)
+		     {
+		         System.out.print(q.poll()+" ");
+		         q.add(sc.nextInt());
+		     }
+		     while(!q.isEmpty())
+		     System.out.print(q.poll()+" ");
+		     System.out.println();
+			//sort.sortedNearly(arr, noOfElement, k);
 		}
 	}
 
