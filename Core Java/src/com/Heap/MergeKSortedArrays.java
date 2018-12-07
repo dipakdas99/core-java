@@ -1,4 +1,4 @@
-package com.test.Heap;
+package com.Heap;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;

@@ -1,8 +1,10 @@
-package com.test.Heap;
+package com.Heap;
+
 import java.util.Scanner;
 import java.util.PriorityQueue;
 import java.util.List;
 import java.util.ArrayList;
+
 public class KthLargestElementInAStream {
 	PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 	List<Integer> elements = new ArrayList<Integer>();
