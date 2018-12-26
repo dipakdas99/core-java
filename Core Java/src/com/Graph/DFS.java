@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Stack;
 public class DFS {
 	private int V;
-	private LinkedList<Integer> adj[];
+	private static LinkedList<Integer> adj[];
 	DFS(int v){
 		this.V = v;
 		adj = new LinkedList[V];
@@ -15,9 +15,19 @@ public class DFS {
 	void addGraph(int i, int w){
 		adj[i].add(w);
 	}
-	void findDFS(int v){
+	void findDFS(int v, LinkedList<Integer> adjj[]){
 		boolean visited[] = new boolean[V];
-		DFSUtil(v, visited); 
+		visited[v] = true; 
+        System.out.print(v+" "); 
+  
+        Iterator<Integer> i = adj[v].listIterator(); 
+        while (i.hasNext()) 
+        { 
+            int n = i.next(); 
+            if (!visited[n]) 
+            	findDFS(n,adjj); 
+        } 
+		
 	}
 	private void DFSUtil(int v, boolean[] visited) {
 		visited[v] = true; 
@@ -41,7 +51,7 @@ public class DFS {
 		graph.addGraph(2,3);
 		graph.addGraph(3,3);
 		
-		graph.findDFS(2);
+		graph.findDFS(2, adj);
 	}
 
 }

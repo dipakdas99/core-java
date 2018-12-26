@@ -40,6 +40,7 @@ public class BFS {
             // Get all adjacent vertices of the dequeued vertex s 
             // If a adjacent has not been visited, then mark it 
             // visited and enqueue it 
+            System.out.println(adj[s].size());
             Iterator<Integer> i = adj[s].listIterator(); 
             while (i.hasNext()) 
             { 
