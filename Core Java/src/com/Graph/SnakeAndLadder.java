@@ -7,6 +7,7 @@ public class SnakeAndLadder {
 	static class QueueEntry {
 		int vertex; // Vertex number
 		int distance; // distance of this vertex from source
+		
 		@Override
 		public String toString() {
 			return "QueueEntry [vertex=" + vertex + ", distance=" + distance + "]";
