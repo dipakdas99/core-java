@@ -1,14 +1,19 @@
 package com.Algorithm;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class TheGridSearch {
 	static String gridSearch(String[] G, String[] P) {
-		int count = 0;
+		/*int count = 0;
 		String res = "NO";
 		int start = 0;
-		for (int i = 1; i < G.length; i++){
+		String prev = "";
+		for (int i = 0; i < G.length; i++){
+			if (prev.equals(P[start]))
+				count = count-1;
 			boolean flag = isPatternMatched(G[i], P[start]);
+			prev = P[start];
 			if (flag){
 				count++;
 				start++;
@@ -21,7 +26,13 @@ public class TheGridSearch {
 				return res;
 			}
 		}
-		return res;
+		return res;*/
+		int n = G[0].length() - P[0].length() + 1;
+	    String delimiter = " ";
+	    String pad = String.format(".{%s}", n);
+	    String grid = String.format("%s%s", String.join(delimiter, G), String.join("", Collections.nCopies(n, delimiter)));
+	    String regex = String.format(".*%s%s.*", String.join(pad, P), pad);
+	    return grid.matches(regex)? "YES" : "NO";
     }
 
     private static boolean isPatternMatched(String g, String p) {
@@ -29,8 +40,9 @@ public class TheGridSearch {
 		for (int i = 0; i < g.length(); i++){
 			if (g.charAt(i) == p.charAt(start)){
 				start++;
-			}else if (start > 0 && g.charAt(i) == p.charAt(0)){
-				start = 1;
+			}else if (start > 0 && g.charAt(i) != p.charAt(start)){
+				i = i -start;
+				start = 0;
 			}
 			else
 				start = 0;
