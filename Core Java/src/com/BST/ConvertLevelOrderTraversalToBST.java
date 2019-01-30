@@ -16,11 +16,9 @@ public class ConvertLevelOrderTraversalToBST {
 			Node temp = new Node(arr[i]); 
 			root = temp; 
 			// insert left child 
-			root.left = insertLevelOrder( root.left, arr,
-					2 * i + 1); 
+			root.left = insertLevelOrder( root.left, arr,2 * i + 1); 
 			// insert right child 
-			root.right = insertLevelOrder(root.right, arr, 
-					2 * i + 2); 
+			root.right = insertLevelOrder(root.right, arr, 2 * i + 2); 
 		} 
 		return root;
 	}
