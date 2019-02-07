@@ -55,7 +55,7 @@ public class SumLeaf {
         
        int s = tree.sum(tree.root);
        System.out.println(s);
-       int sum=8;
+       int sum=7;
        List<Integer> path=new ArrayList<Integer>();
        boolean result = tree.rootToLeafSum(tree.root, sum, path);
        if(result == true){

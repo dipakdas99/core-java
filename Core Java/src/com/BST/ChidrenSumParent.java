@@ -11,7 +11,7 @@ public class ChidrenSumParent {
 			return 1;
 		else{
 			if (root.left != null)
-				sum = root.left.key + sum;
+				sum = root.left.key;
 			if (root.right != null)
 				sum = root.right.key +sum;
 			if ((root.key == sum) && (sumParent(root.left)!=0) && (sumParent(root.right)!=0))

@@ -11,7 +11,7 @@ public class TopologicalSort {
 		this.V = v;
 		adj = new LinkedList[V];
 		for (int  i = 0; i < V; i++){
-			adj[i] = new LinkedList();
+			adj[i] = new LinkedList<>();
 		}
 	}
 	private void addEdge(int src, int dest){
